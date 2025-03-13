@@ -26,7 +26,7 @@ describe('SearchService', () => {
     ];
 
     service.getAll().subscribe((people: any) => {
-      expect(people.length.toBe(2));
+      expect(people.length).toBe(2);
       expect(people[0].name).toBe("Trinidad Cornejo");
       expect(people).toEqual(mockResponse);
       done();
@@ -42,7 +42,7 @@ describe('SearchService', () => {
     const mockResponse = [{ name: "Trinidad Cornejo"}];
 
     service.search('trini').subscribe((people: any) => {
-      expect(people.length.toBe(1));
+      expect(people.length).toBe(1);
       expect(people[0].name).toBe("Trinidad Cornejo");
       done();
     });
@@ -54,11 +54,15 @@ describe('SearchService', () => {
 
   it('should fetch by id', (done: DoneFn) => {
     const mockResponse = [
-      { name: "Trinidad Cornejo"},
-      { name: "Matías Herrera"},
+      {
+        id: 20,
+        name: "Trinidad Cornejo"},
+      {
+        id: 7,
+        name: "Matías Herrera"},
     ];
 
-    service.get(2).subscribe((person: any) => {
+    service.get(7).subscribe((person: any) => {
       expect(person.name).toBe('Matías Herrera');
       done();
     });
