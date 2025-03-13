@@ -1,5 +1,4 @@
-
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {map, Observable} from "rxjs";
 
@@ -8,25 +7,41 @@ import {map, Observable} from "rxjs";
 })
 export class SearchService {
 
-  constructor(private http: HttpClient ) { }
+  constructor(private http: HttpClient) {
+  }
+
   getAll(): Observable<Person[]> {
     return this.http.get<Person[]>('assets/data/people.json');
   }
 
-  search(q: string): Observable<Person[]>{
-    if(!q || q === '*'){
+  search(q: string): Observable<Person[]> {
+    if (!q || q === '*') {
       q = '';
     } else {
       q = q.toLowerCase();
     }
     return this.getAll().pipe(
-      map((data: Person[]) => {
-        return data.filter((item: Person) =>
-          JSON.stringify(item).toLowerCase().includes(q)
-        );
+      map((data: Person[]) =>
+        data.map((item: Person) => !!localStorage['person' + item.id] ? JSON.parse(localStorage['person' + item.id]) : item).filter((item: Person) => JSON.stringify(item).toLowerCase().includes(q)))
+    );
+  }
+
+  get(id: number): Observable<Person> {
+    return this.getAll().pipe(
+      map((all: Person[])=> {
+        if(localStorage['person' + id]){
+          return JSON.parse(localStorage['person' + id]);
+        }
+        return all.find(e => e.id === id);
       })
-    )
-  };
+    );
+  }
+
+  save(person: Person): void {
+    localStorage['person' + person.id] = JSON.stringify(person);
+  }
+
+
 }
 
 export class Address {
@@ -35,22 +50,22 @@ export class Address {
   state: string;
   zip: string;
 
-  constructor(address: Partial<Address> ={}){
-  this.street = address?.street || '';
-  this.city = address?.city || '';
-  this.state = address?.state || '';
-  this.zip = address?.zip || '';
+  constructor(address: Partial<Address> = {}) {
+    this.street = address?.street || '';
+    this.city = address?.city || '';
+    this.state = address?.state || '';
+    this.zip = address?.zip || '';
 
   }
 }
 
-export class Person{
+export class Person {
   id: number | null;
   name: string;
   phone: string;
   address: Address;
 
-  constructor(person: Partial<Person>){
+  constructor(person: Partial<Person>) {
     this.id = person?.id || null;
     this.name = person?.name || "";
     this.phone = person?.phone || "";
