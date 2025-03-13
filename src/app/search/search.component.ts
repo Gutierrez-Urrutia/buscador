@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { Person, SearchService} from "../shared";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-search',
@@ -10,8 +11,14 @@ export class SearchComponent implements OnInit {
 
   query!: string;
   searchResults: Person[] = [];
-  constructor(private searchService: SearchService){};
-  ngOnInit(): void {};
+  constructor(private searchService: SearchService, private route: ActivatedRoute){};
+  ngOnInit(): void {
+    const params = this.route.snapshot.params;
+    if (params['term']){
+      this.query = decodeURIComponent(params['term']);
+      this.search();
+    }
+  };
   search(): void {
     this.searchService.search(this.query).subscribe({
       next: (data: Person[]) => {

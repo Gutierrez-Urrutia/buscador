@@ -1,35 +1,222 @@
 [
   {
     "id": 1,
-    "name": "Nikola Jokić",
-    "phone": "(720) 555-1212",
+    "name": "Martín González",
+    "phone": "+56 9 8765 4321",
     "address": {
-      "street": "2000 16th Street",
-      "city": "Denver",
-      "state": "CO",
-      "zip": "80202"
+      "street": "Avenida Providencia 1234",
+      "city": "Santiago",
+      "state": "RM",
+      "zip": "7500000"
     }
   },
   {
     "id": 2,
-    "name": "Jamal Murray",
-    "phone": "(303) 321-8765",
+    "name": "Camila Rojas",
+    "phone": "+56 9 9123 4567",
     "address": {
-      "street": "2654 Washington Street",
-      "city": "Lakewood",
-      "state": "CO",
-      "zip": "80568"
+      "street": "Los Carrera 567",
+      "city": "Valparaíso",
+      "state": "Valparaíso",
+      "zip": "2340000"
     }
   },
   {
     "id": 3,
-    "name": "Aaron Gordon",
-    "phone": "(303) 323-1233",
+    "name": "Felipe Muñoz",
+    "phone": "+56 9 9987 6543",
     "address": {
-      "street": "46 Creekside Way",
-      "city": "Winter Park",
-      "state": "CO",
-      "zip": "80482"
+      "street": "O'Higgins 789",
+      "city": "Concepción",
+      "state": "Biobío",
+      "zip": "4030000"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Javiera Pérez",
+    "phone": "+56 9 9234 5678",
+    "address": {
+      "street": "Avenida Alemania 1456",
+      "city": "Viña del Mar",
+      "state": "Valparaíso",
+      "zip": "2520000"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Cristóbal Valdés",
+    "phone": "+56 9 9876 5432",
+    "address": {
+      "street": "Pedro de Valdivia 789",
+      "city": "Temuco",
+      "state": "Araucanía",
+      "zip": "4780000"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Fernanda Soto",
+    "phone": "+56 9 9212 3456",
+    "address": {
+      "street": "Avenida España 234",
+      "city": "Antofagasta",
+      "state": "Antofagasta",
+      "zip": "1240000"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Matías Herrera",
+    "phone": "+56 9 9765 1234",
+    "address": {
+      "street": "Prat 678",
+      "city": "La Serena",
+      "state": "Coquimbo",
+      "zip": "1700000"
+    }
+  },
+  {
+    "id": 8,
+    "name": "Valentina Castillo",
+    "phone": "+56 9 9456 7890",
+    "address": {
+      "street": "Avenida Brasil 980",
+      "city": "Iquique",
+      "state": "Tarapacá",
+      "zip": "1100000"
+    }
+  },
+  {
+    "id": 9,
+    "name": "Ignacio Fernández",
+    "phone": "+56 9 9345 6789",
+    "address": {
+      "street": "San Martín 456",
+      "city": "Rancagua",
+      "state": "O'Higgins",
+      "zip": "2820000"
+    }
+  },
+  {
+    "id": 10,
+    "name": "Sofía Ramírez",
+    "phone": "+56 9 9567 4321",
+    "address": {
+      "street": "Avenida Argentina 567",
+      "city": "Puerto Montt",
+      "state": "Los Lagos",
+      "zip": "5480000"
+    }
+  },
+  {
+    "id": 11,
+    "name": "Francisco Silva",
+    "phone": "+56 9 9887 6543",
+    "address": {
+      "street": "Arturo Prat 456",
+      "city": "Copiapó",
+      "state": "Atacama",
+      "zip": "1530000"
+    }
+  },
+  {
+    "id": 12,
+    "name": "Josefa Alarcón",
+    "phone": "+56 9 9654 3210",
+    "address": {
+      "street": "Colón 321",
+      "city": "Osorno",
+      "state": "Los Lagos",
+      "zip": "5310000"
+    }
+  },
+  {
+    "id": 13,
+    "name": "Gabriel Pino",
+    "phone": "+56 9 9876 4321",
+    "address": {
+      "street": "Baquedano 987",
+      "city": "Arica",
+      "state": "Arica y Parinacota",
+      "zip": "1000000"
+    }
+  },
+  {
+    "id": 14,
+    "name": "Daniela Figueroa",
+    "phone": "+56 9 9213 5678",
+    "address": {
+      "street": "Avenida Matta 345",
+      "city": "Talca",
+      "state": "Maule",
+      "zip": "3460000"
+    }
+  },
+  {
+    "id": 15,
+    "name": "Pedro Vera",
+    "phone": "+56 9 9543 6789",
+    "address": {
+      "street": "Los Leones 765",
+      "city": "Chillán",
+      "state": "Ñuble",
+      "zip": "3780000"
+    }
+  },
+  {
+    "id": 16,
+    "name": "Antonia Reyes",
+    "phone": "+56 9 9123 9876",
+    "address": {
+      "street": "Eyzaguirre 890",
+      "city": "Curicó",
+      "state": "Maule",
+      "zip": "3340000"
+    }
+  },
+  {
+    "id": 17,
+    "name": "Sebastián Bravo",
+    "phone": "+56 9 9765 4321",
+    "address": {
+      "street": "Avenida Independencia 1200",
+      "city": "San Antonio",
+      "state": "Valparaíso",
+      "zip": "2660000"
+    }
+  },
+  {
+    "id": 18,
+    "name": "Carolina Jara",
+    "phone": "+56 9 9234 7654",
+    "address": {
+      "street": "Manuel Montt 456",
+      "city": "Punta Arenas",
+      "state": "Magallanes",
+      "zip": "6200000"
+    }
+  },
+  {
+    "id": 19,
+    "name": "Benjamín Espinoza",
+    "phone": "+56 9 9123 4567",
+    "address": {
+      "street": "José Miguel Carrera 908",
+      "city": "Los Ángeles",
+      "state": "Biobío",
+      "zip": "4440000"
+    }
+  },
+  {
+    "id": 20,
+    "name": "Trinidad Cornejo",
+    "phone": "+56 9 9432 8765",
+    "address": {
+      "street": "Avenida Francia 301",
+      "city": "San Fernando",
+      "state": "O'Higgins",
+      "zip": "3070000"
     }
   }
-    ]
+]
