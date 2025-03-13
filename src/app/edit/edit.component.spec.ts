@@ -1,23 +1,48 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditComponent } from './edit.component';
+import {Address, Person, SearchService} from "../shared";
+import {ActivatedRoute} from "@angular/router";
+import {FormsModule} from "@angular/forms";
+import {HttpClientTestingModule} from "@angular/common/http/testing";
+import {of} from "rxjs";
 
 describe('EditComponent', () => {
-  let component: EditComponent;
-  let fixture: ComponentFixture<EditComponent>;
+  let mockSearchService: SearchService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditComponent ]
-    })
-    .compileComponents();
+      declarations: [ EditComponent ],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: {
+              params: { id: 1}
+            }
+          }
+        }
+      ],
+      imports: [ FormsModule, HttpClientTestingModule]}).compileComponents();
 
-    fixture = TestBed.createComponent(EditComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    mockSearchService = TestBed.inject(SearchService);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should fetch a single record', () => {
+    const fixture = TestBed.createComponent(EditComponent);
+    const person = new Person({
+      id: 1,
+      name: 'Pablo Gutiérrez',
+    });
+    person.address = new Address({
+      city: 'Santiago',
+    });
+
+    spyOn(mockSearchService, 'get').and.returnValue(of(person));
+    fixture.detectChanges();
+    expect(mockSearchService.get).toHaveBeenCalledWith(1);
+
+    const editComponent = fixture.nativeElement;
+    expect(editComponent.querySelector('h1').innerHTML).toBe('Pablo Gutiérrez');
   });
 });
