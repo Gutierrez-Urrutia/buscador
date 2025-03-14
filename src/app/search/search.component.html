@@ -1,22 +1,27 @@
-<h2>Search</h2>
-<form>
-  <input type="search" name="query" [(ngModel)]="query" (keyup.enter)="search()">
-  <button type="button" (click)="search()">Search</button>
+<h2 class="mt-2">Buscador</h2>
+<form class="row g-2">
+  <div class="col-auto">
+    <input (keyup.enter)="search()" [(ngModel)]="query" class="form-control ml-2 mr-2" name="query"
+           placeholder="" type="search">
+  </div>
+  <div class="col-auto">
+    <button (click)="search()" class="btn btn-primary" type="button">Buscar</button>
+  </div>
 </form>
-<table *ngIf="searchResults?.length">
+<table *ngIf="searchResults?.length" class="table">
   <thead>
   <tr>
-    <th>Name</th>
-    <th>Phone</th>
-    <th>Address</th>
+    <th>Nombre</th>
+    <th>Número Telefónico</th>
+    <th>Dirección</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let person of searchResults; let i=index">
-    <td><a [routerLink]="['/edit', person.id ]">{{person.name}}</a></td>
-    <td>{{person.phone}}</td>
-    <td>{{person.address.street}}<br/>
-      {{person.address.city}}, {{person.address.state}} {{person.address.zip}}
+    <td><a [routerLink]="['/edit', person.id]">{{ person.name }}</a></td>
+    <td>{{ person.phone }}</td>
+    <td>{{ person.address.street }}<br/>
+      {{ person.address.city }}, {{ person.address.state }} {{ person.address.zip }}
     </td>
   </tr>
   </tbody>

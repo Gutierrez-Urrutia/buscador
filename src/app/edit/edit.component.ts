@@ -21,7 +21,7 @@ export class EditComponent {
     const id = +params['id'];
     this.sub = this.service.get(id).subscribe(person =>{
       if(person){
-        this.person = person;
+        this.person = {... person};
       } else {
         this.goToList();
       }

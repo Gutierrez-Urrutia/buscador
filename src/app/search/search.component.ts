@@ -12,6 +12,7 @@ export class SearchComponent implements OnInit {
   query!: string;
   searchResults: Person[] = [];
   constructor(private searchService: SearchService, private route: ActivatedRoute){};
+
   ngOnInit(): void {
     const params = this.route.snapshot.params;
     if (params['term']){
@@ -19,6 +20,7 @@ export class SearchComponent implements OnInit {
       this.search();
     }
   };
+
   search(): void {
     this.searchService.search(this.query).subscribe({
       next: (data: Person[]) => {

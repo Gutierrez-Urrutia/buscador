@@ -6,6 +6,8 @@ import {ActivatedRoute} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import {HttpClientTestingModule} from "@angular/common/http/testing";
 import {of} from "rxjs";
+import {MatInputModule} from "@angular/material/input";
+import {NoopAnimationsModule} from "@angular/platform-browser/animations";
 
 describe('EditComponent', () => {
   let mockSearchService: SearchService;
@@ -23,7 +25,12 @@ describe('EditComponent', () => {
           }
         }
       ],
-      imports: [ FormsModule, HttpClientTestingModule]}).compileComponents();
+      imports: [
+        FormsModule,
+        HttpClientTestingModule,
+        MatInputModule,
+        NoopAnimationsModule
+      ]}).compileComponents();
 
     mockSearchService = TestBed.inject(SearchService);
   });
