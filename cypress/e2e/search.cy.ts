@@ -8,10 +8,10 @@ describe('Search', () => {
     cy.get('app-root app-search form button').should('exist');
   });
 
-  it('should allow searchong', () => {
-    cy.get('input').type('A');
+  it('should allow searching', () => {
+    cy.get('input').type('Matías');
     cy.get('button').click();
-    const list = cy.get('app-search mat-list mat-list-item');
-    list.should('have.length', 20);
+    const list = cy.get('app-search table tbody tr');
+    list.should('have.length', 1);
   });
 });

@@ -50,6 +50,6 @@ describe('EditComponent', () => {
     expect(mockSearchService.get).toHaveBeenCalledWith(1);
 
     const editComponent = fixture.nativeElement;
-    expect(editComponent.querySelector('h3').innerHTML).toBe('Pablo Gutiérrez');
+    expect(editComponent.querySelector('h1').innerHTML).toBe('Pablo Gutiérrez');
   });
 });
