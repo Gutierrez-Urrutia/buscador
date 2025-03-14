@@ -4,21 +4,21 @@ node {
   env.PATH = "${nodeHome}/bin:${env.PATH}"
 
   stage('check tools') {
-    sh "node -v"
-    sh "npm -v"
+    bat "node -v"
+    bat "npm -v"
   }
   stage('checkout') {
     checkout scm
   }
   stage('npm install') {
-    sh "npm install"
+    bat "npm install"
   }
   stage('unit tests') {
-    sh "npm test -- --watch=false"
+    bat "npm test -- --watch=false"
   }
   stage('cypress tests') {
-    sh "npm start &"
-    sh "npm run cypress:run"
+    bat "npm start &"
+    bat "npm run cypress:run"
   }
 }
 
