@@ -17,7 +17,7 @@ node {
     bat "npm test -- --watch=false"
   }
   stage('cypress tests') {
-    bat "npm start &"
+    bat "start /B npm start"
     bat "npm run cypress:run"
   }
 }
